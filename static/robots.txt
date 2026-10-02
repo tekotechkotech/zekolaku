@@ -1,0 +1,5 @@
+# Robots.txt for SMA & Pesantren Terpadu Madani Global
+User-agent: *
+Allow: /
+
+Sitemap: https://madaniglobal.sch.id/sitemap.xml
