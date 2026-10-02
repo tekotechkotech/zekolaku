@@ -11,27 +11,27 @@
 
 ## Phase 2 — Website Foundation
 
-- [ ] Initialize SvelteKit project
-- [ ] Set global styles
-- [ ] Build page shell
-- [ ] Build responsive navigation
-- [ ] Build footer
+- [x] Initialize SvelteKit project
+- [x] Set global styles
+- [x] Build page shell
+- [x] Build responsive navigation
+- [x] Build footer
 
 ## Phase 3 — Main Content
 
-- [ ] Hero
-- [ ] School profile
-- [ ] Programs
-- [ ] Facilities
-- [ ] News
-- [ ] Gallery
-- [ ] Contact
+- [x] Hero
+- [x] School profile
+- [x] Programs
+- [x] Facilities
+- [x] News
+- [x] Gallery
+- [x] Contact
 
 ## Phase 4 — Quality
 
-- [ ] Responsive review
-- [ ] Accessibility review
-- [ ] SEO metadata
+- [x] Responsive review
+- [x] Accessibility review
+- [x] SEO metadata
 - [ ] Performance review
 
 ## Phase 5 — Launch
