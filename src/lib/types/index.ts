@@ -96,7 +96,7 @@ export interface FacilityDetail {
 	description: string;
 	image: string;
 	specs?: string[];
-	highlight?: string;
+	highlight?: string | null;
 	featured?: boolean;
 }
 
@@ -104,14 +104,14 @@ export interface AchievementDetail {
 	id: string;
 	title: string;
 	winner: string;
-	role: 'Siswa' | 'Guru';
-	scope: 'Akademik' | 'Non-Akademik';
+	role: 'Siswa' | 'Guru' | string;
+	scope: 'Akademik' | 'Non-Akademik' | string;
 	category: string;
-	level: 'Kabupaten/Kota' | 'Provinsi' | 'Nasional' | 'Internasional';
+	level: 'Kabupaten/Kota' | 'Provinsi' | 'Nasional' | 'Internasional' | string;
 	year: number;
 	organizer: string;
-	description?: string;
-	badgeVariant: 'emerald' | 'navy' | 'amber' | 'blue';
+	description?: string | null;
+	badgeVariant: 'emerald' | 'navy' | 'amber' | 'blue' | string;
 	featured?: boolean;
 }
 
@@ -180,17 +180,19 @@ export interface PPDBFaq {
 }
 
 export interface PPDBInfo {
-	status: 'Dibuka' | 'Segera Dibuka' | 'Ditutup';
+	status: 'Dibuka' | 'Segera Dibuka' | 'Ditutup' | string;
 	academicYear: string;
 	currentWave: string;
 	deadline: string;
 	consultationWa: string;
 	registrationUrl: string;
 	quotaTotal: number;
+	faq?: { q: string; a: string }[];
+	faqs?: { q: string; a: string }[];
 }
 
 export interface PPDBData {
-	status: 'Dibuka' | 'Segera Dibuka' | 'Ditutup';
+	status: 'Dibuka' | 'Segera Dibuka' | 'Ditutup' | string;
 	academicYear: string;
 	currentWave: string;
 	deadline: string;
@@ -204,6 +206,7 @@ export interface PPDBData {
 	fees: PPDBFeeItem[];
 	scholarships: { title: string; description: string; badge: string }[];
 	faqs: PPDBFaq[];
+	faq?: PPDBFaq[];
 }
 
 export interface ContactData {
@@ -221,4 +224,77 @@ export interface ContactData {
 	googleMapsEmbedUrl: string;
 	googleMapsUrl: string;
 	socials: SchoolSocials;
+}
+
+export interface ColorShades {
+	50: string;
+	100: string;
+	200: string;
+	300: string;
+	400: string;
+	500: string;
+	600: string;
+	700: string;
+	800: string;
+	900: string;
+	950: string;
+}
+
+export interface ThemePreset {
+	id: string;
+	name: string;
+	description: string;
+	primaryHex: string;
+	shades: ColorShades;
+}
+
+export interface ThemeConfig {
+	preset: 'emerald' | 'sapphire' | 'teal' | 'amber' | 'rose' | 'violet' | 'custom';
+	primaryName: string;
+	primaryHex: string;
+	primaryShades?: ColorShades;
+	mode?: 'light' | 'dark' | 'system';
+	radius?: 'sm' | 'md' | 'lg' | 'xl';
+	updatedAt?: string;
+}
+
+export type SectionBgStyle = 'default' | 'white' | 'slate' | 'navy' | 'gradient';
+
+export interface SectionTemplateOption {
+	id: string;
+	name: string;
+	description: string;
+	previewIcon?: string;
+}
+
+export interface LandingSection {
+	id: string;
+	sectionKey: string;
+	name: string;
+	template: string;
+	isEnabled: boolean;
+	sortOrder: number;
+	customTitle?: string | null;
+	customSubtitle?: string | null;
+	badgeText?: string | null;
+	bgStyle: SectionBgStyle;
+	itemCount: number;
+	config?: Record<string, any> | null;
+	updatedAt?: Date | string;
+}
+
+export interface Testimonial {
+	id: string;
+	name: string;
+	role: string;
+	relation: string;
+	content: string;
+	avatar?: string | null;
+	rating: number;
+	year: string;
+	sortOrder: number;
+	featured: boolean;
+	status: 'published' | 'draft' | string;
+	createdAt?: Date;
+	updatedAt?: Date;
 }

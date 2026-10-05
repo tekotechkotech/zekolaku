@@ -160,7 +160,7 @@
 							<!-- Header badges: Level & Year & Scope -->
 							<div class="flex items-center justify-between gap-2">
 								<div class="flex items-center gap-1.5">
-									<Badge variant={ach.badgeVariant} size="sm">
+									<Badge variant={ach.badgeVariant as any} size="sm">
 										{ach.level}
 									</Badge>
 									<Badge variant="outline" size="sm">
