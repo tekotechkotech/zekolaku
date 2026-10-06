@@ -46,6 +46,7 @@
 			badgeText={sec.badgeText}
 			bgStyle={sec.bgStyle}
 			ppdb={data.ppdb}
+			slides={data.heroSlides}
 		/>
 	{:else if sec.sectionKey === 'greeting'}
 		<GreetingSection

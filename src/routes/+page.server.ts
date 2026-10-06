@@ -34,6 +34,13 @@ export const load: PageServerLoad = async () => {
 			.where(eq(schema.testimonials.status, 'published'))
 			.orderBy(asc(schema.testimonials.sortOrder));
 
+		// Hero Slides
+		const heroSlides = await db
+			.select()
+			.from(schema.heroSlides)
+			.where(eq(schema.heroSlides.status, 'published'))
+			.orderBy(asc(schema.heroSlides.sortOrder));
+
 		const programs = await db
 			.select()
 			.from(schema.programs)
@@ -85,6 +92,7 @@ export const load: PageServerLoad = async () => {
 		return {
 			landingSections,
 			testimonials: rawTestimonials,
+			heroSlides,
 			stats: profile?.stats || schoolStats,
 			pillars: profile?.pillars || schoolPillars,
 			ppdb: ppdb ? { ...ppdb, faqs: ppdb.faq || [] } : ppdbData,
@@ -103,6 +111,7 @@ export const load: PageServerLoad = async () => {
 		return {
 			landingSections: DEFAULT_LANDING_SECTIONS.filter((s) => s.isEnabled),
 			testimonials: [],
+			heroSlides: [],
 			stats: schoolStats,
 			pillars: schoolPillars,
 			ppdb: ppdbData,

@@ -19,7 +19,8 @@
 		ChevronRight,
 		ShieldCheck,
 		Palette,
-		LayoutTemplate
+		LayoutTemplate,
+		SlidersHorizontal
 	} from 'lucide-svelte';
 
 	let { data, children } = $props();
@@ -71,6 +72,7 @@
 			title: 'Tampilan & Konfigurasi',
 			items: [
 				{ href: '/admin/landing', label: 'Tata Letak Beranda', icon: LayoutTemplate, publicPath: '/', publicLabel: 'Beranda' },
+				{ href: '/admin/slides', label: 'Slide Hero Beranda', icon: SlidersHorizontal, publicPath: '/', publicLabel: 'Beranda' },
 				{ href: '/admin/theme', label: 'Tema & Warna', icon: Palette, publicPath: '/', publicLabel: 'Live Website' },
 				{ href: '/admin/settings', label: 'Pengaturan Website', icon: Settings, publicPath: '/kontak', publicLabel: 'Kontak Publik' }
 			]

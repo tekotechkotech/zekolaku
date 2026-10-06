@@ -298,3 +298,19 @@ export interface Testimonial {
 	createdAt?: Date;
 	updatedAt?: Date;
 }
+
+export interface HeroSlide {
+	id: string;
+	title: string;
+	subtitle: string;
+	badgeText?: string | null;
+	image: string;
+	primaryCtaText: string;
+	primaryCtaLink: string;
+	secondaryCtaText?: string | null;
+	secondaryCtaLink?: string | null;
+	sortOrder: number;
+	status: 'published' | 'draft' | string;
+	createdAt?: Date | string;
+	updatedAt?: Date | string;
+}

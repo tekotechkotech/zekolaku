@@ -354,6 +354,15 @@
 													<div class="w-full h-3 bg-emerald-100 rounded border border-emerald-300"></div>
 													<div class="w-full h-3 bg-slate-200 rounded"></div>
 												</div>
+											{:else if tpl.iconType === 'carousel'}
+												<div class="relative flex items-center justify-between w-full h-8 px-2 bg-slate-900/80 rounded overflow-hidden">
+													<div class="size-2 rounded-full bg-slate-400"></div>
+													<div class="flex flex-col items-center gap-0.5">
+														<div class="w-12 h-1.5 bg-emerald-400 rounded"></div>
+														<div class="w-16 h-1 bg-slate-300 rounded"></div>
+													</div>
+													<div class="size-2 rounded-full bg-slate-400"></div>
+												</div>
 											{:else}
 												<div class="w-full h-8 bg-navy-900 rounded flex items-center justify-center">
 													<div class="w-16 h-2 bg-emerald-400 rounded"></div>
@@ -364,6 +373,25 @@
 								{/each}
 							</div>
 						</div>
+
+						{#if sec.sectionKey === 'hero'}
+							<div class="rounded-xl border border-emerald-200 bg-emerald-50/80 p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-emerald-950">
+								<div class="flex items-center gap-2.5">
+									<Sparkles class="size-4 text-emerald-600 shrink-0" />
+									<div class="text-xs">
+										<p class="font-bold text-slate-900">Manajemen Konten Slide Hero Carousel</p>
+										<p class="text-slate-600">Untuk varian Carousel, konten judul, deskripsi, foto latar, dan tombol aksi dikelola dari menu Slide Hero.</p>
+									</div>
+								</div>
+								<a
+									href="/admin/slides"
+									class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors shrink-0 shadow-xs"
+								>
+									<span>Kelola Slide Hero</span>
+									<ExternalLink class="size-3.5" />
+								</a>
+							</div>
+						{/if}
 
 						<!-- 2. Custom Text & Content Overrides -->
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">

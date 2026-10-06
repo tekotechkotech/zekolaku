@@ -11,7 +11,7 @@ export interface SectionDefinition {
 		id: string;
 		name: string;
 		description: string;
-		iconType: 'split' | 'centered' | 'cards' | 'bento' | 'timeline' | 'accordion' | 'banner' | 'quote';
+		iconType: 'split' | 'centered' | 'cards' | 'bento' | 'timeline' | 'accordion' | 'banner' | 'quote' | 'carousel';
 	}[];
 }
 
@@ -41,6 +41,24 @@ export const SECTION_DEFINITIONS: Record<string, SectionDefinition> = {
 				name: 'Bento Card Showcase',
 				description: 'Headline utama di kiri, kartu highlight keunggulan & akreditasi melayang di kanan.',
 				iconType: 'bento'
+			},
+			{
+				id: 'carousel-kenburns',
+				name: 'Carousel Sinematik (Ken Burns)',
+				description: 'Slide layar penuh dengan efek zoom lembut, navigasi glassmorphism, dan timer bar.',
+				iconType: 'carousel'
+			},
+			{
+				id: 'carousel-slide',
+				name: 'Carousel Slide Horisontal',
+				description: 'Transisi geser horizontal modern dengan nomor indikator slide dan tombol panah.',
+				iconType: 'carousel'
+			},
+			{
+				id: 'carousel-minimal',
+				name: 'Carousel Minimalis (Clean Crossfade)',
+				description: 'Crossfade halus dengan kartu teks melayang ringkas dan kontrol navigasi sudut bawah.',
+				iconType: 'carousel'
 			}
 		]
 	},

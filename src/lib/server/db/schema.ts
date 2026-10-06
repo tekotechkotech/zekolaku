@@ -217,3 +217,19 @@ export const testimonials = mysqlTable('testimonials', {
 	createdAt: timestamp('created_at').defaultNow().notNull(),
 	updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull()
 });
+
+export const heroSlides = mysqlTable('hero_slides', {
+	id: varchar('id', { length: 100 }).primaryKey(),
+	title: varchar('title', { length: 255 }).notNull(),
+	subtitle: text('subtitle').notNull(),
+	badgeText: varchar('badge_text', { length: 100 }),
+	image: text('image').notNull(),
+	primaryCtaText: varchar('primary_cta_text', { length: 100 }).default('Daftar Santri Baru').notNull(),
+	primaryCtaLink: varchar('primary_cta_link', { length: 255 }).default('/ppdb').notNull(),
+	secondaryCtaText: varchar('secondary_cta_text', { length: 100 }),
+	secondaryCtaLink: varchar('secondary_cta_link', { length: 255 }),
+	sortOrder: int('sort_order').default(1).notNull(),
+	status: varchar('status', { length: 20 }).default('published').notNull(),
+	createdAt: timestamp('created_at').defaultNow().notNull(),
+	updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull()
+});
